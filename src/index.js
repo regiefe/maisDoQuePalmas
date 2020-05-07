@@ -11,7 +11,7 @@ const lastname = 'Silva' // <-Coloque o seu segundo nome
 
 const maisdoquepalmas = async()=> {
   const browser = await puppeteer.launch({
-    headless: false, 
+    // headless: false, 
   })
     const page = await browser.newPage()
     await page.goto(url)
@@ -24,3 +24,4 @@ const maisdoquepalmas = async()=> {
 }
 
 maisdoquepalmas()
+console.log(`Carregando o site '${url}' '${nome}' por favor aguarde...`)
