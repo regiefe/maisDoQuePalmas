@@ -8,20 +8,15 @@ const email = 'regiefe@gmail.com' // <-Coloque o seu Email
 const nome = 'Reginaldo'  // <-Coloque o seu primeiro nome 
 const lastname = 'Silva' // <-Coloque o seu segundo nome
 
-
 const maisdoquepalmas = async()=> {
   const browser = await puppeteer.launch({
-    // headless: false, 
+     headless: false, 
   })
     const page = await browser.newPage()
     await page.goto(url)
-    await page.type('#pressure-sender-email-id', email, {delay:100}) 
-    await page.type('#pressure-sender-firstname-id', nome, {delay:100}) 
-    await page.type('#pressure-sender-lastname-id', lastname, {delay:100}) 
-    
-    await page.click('button[type=submit]')
+    await page.screenshot({path: 'img/maisdoquepalmas.png'})
     await browser.close()
 }
 
 maisdoquepalmas()
-console.log(`Carregando o site '${url}' '${nome}' por favor aguarde...`)
+console.log(`Carregando o site '${url}' para fazer o screenshot`)
